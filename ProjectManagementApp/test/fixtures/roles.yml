@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  role_name: Admin
+  role_description: Admin
+  active: true
+
+two:
+  role_name: Manager
+  role_description: manager
+  active: true

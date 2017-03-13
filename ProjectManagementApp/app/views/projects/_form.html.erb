@@ -1,0 +1,41 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id = "error_display">
+      <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :project_name %>
+    <%= f.text_field :project_name %>
+  </div>
+  <div class="field">
+    <%= f.label :project_description %>
+    <%= f.text_area :project_description %>
+  </div>
+  <div class="field">
+    <%= f.label :project_creator_id %>
+	<%= current_user.first_name + " " + current_user.last_name %>
+	<%= f.text_field :project_creator_id , :style => "display:none" %>
+  </div>
+   <br/>
+  <div class="field">
+    <%= f.label :project_manager_id %>
+	<%= f.select :project_manager_id, options_for_select(User.where("role_id = 2").map { |user| [user.first_name + " " + user.last_name , user.id] })  %>
+  </div>
+  <div class="field">
+    <%= f.label :project_created %>
+    <%= f.text_field :project_created, :class => "datepicker" %>
+  </div>
+  <div class="actions">    
+	<%= button_tag(type: "submit", class: "btn btn-primary") do %>
+	 Submit 
+	<% end %>
+  </div>
+<% end %>
+
+

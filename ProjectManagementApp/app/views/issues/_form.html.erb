@@ -1,0 +1,48 @@
+<%= form_for(@issue) do |f| %>
+  <% if @issue.errors.any? %>
+    <div id = "error_display">     
+
+      <ul>
+      <% @issue.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :issue_title %>
+    <%= f.text_field :issue_title %>
+  </div>
+   <div class="field">
+    <%= f.label :project_id %>
+    <%= f.select :project_id,Project.all.map { |project| [project.project_name ,project.id] }%>
+  </div>
+  <div class="field">
+    <%= f.label :issue_priority_id %>
+    <%= f.select :issue_priority_id,Issuepriority.all.map { |issue| [issue.name , issue.id] } %>
+  </div>
+  <div class="field">
+    <%= f.label :issue_status_id %>
+    <%= f.select :issue_status_id,Issuestatus.all.map { |issue| [issue.name , issue.id] } %>
+  </div>
+  <div class="field">
+    <%= f.label :issue_creator_id %>
+	<%= current_user.first_name + " " + current_user.last_name %>
+	<%= f.text_field :issue_creator_id , :style => "display:none" %>
+  </div><br/>
+  <div class="field">
+    <%= f.label :issue_assigned_id %>
+	<%= f.select :issue_assigned_id, options_for_select(User.where("role_id = 3").map { |user| [user.first_name + " " + user.last_name , user.id] })  %>
+    
+  </div> 
+  <div class="field">
+	<%= f.label :last_updated_at %>
+    <%= f.text_field :last_updated_at, :class => "datepicker" %>
+  </div>
+  <div class="actions">
+    <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+	 Submit 
+	<% end %>
+  </div>
+<% end %>

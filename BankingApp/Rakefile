@@ -1,0 +1,22 @@
+DB_FILE_NAME = "BankingDB"
+task :default => [:create , :test , :run , :delete ]
+
+
+task :create do
+ `sqlite3 #{DB_FILE_NAME} < db/CreateSchema.sql `
+ `sqlite3 #{DB_FILE_NAME} < db/seed.sql `
+end
+
+task :test do
+ ruby "test/customer_test.rb"
+ ruby "test/account_test.rb"
+ ruby "test/customer_account_test.rb"
+end
+
+task :run do
+ ruby "consoleUI/menu_view.rb"
+end
+
+task :delete do
+File.delete(DB_FILE_NAME)
+end

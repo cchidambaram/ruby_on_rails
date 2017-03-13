@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+	<p> Hello <%= @user.first_name %> , </p>
+    <h5>Issue Assigned</h5>
+    <p>
+      Issue Name : <%= @issue.issue_title %> <br/>
+	  Project Title: <%= @issue.project.project_name %> <br/>
+	  Priority : <%= @issue.issue_priority.name %> <br/>
+	  Status: <%= @issue.issue_status.name %> <br/>
+	  Created by: <%= @issue.issue_creator.first_name + " " + @issue.issue_creator.last_name %> <br/>
+    </p>
+    <p>      
+    </p>
+    <p>Thanks for joining Project Management Application and have a great day!</p>
+  </body>
+</html>

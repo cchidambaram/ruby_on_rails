@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+Assign1:
+  project_name: Assign1
+  project_description: Assign1
+  project_creator: John
+  project_manager: John
+  active: true
+  project_created: 2013-08-04
+  
+
+Assign2:
+  project_name: Assign2
+  project_description: Assign2
+  project_creator: John
+  project_manager: John
+  active: true
+  project_created: 2013-08-04
+  

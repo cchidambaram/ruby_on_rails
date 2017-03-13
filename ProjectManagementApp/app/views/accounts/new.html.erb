@@ -1,0 +1,27 @@
+<h1 class="text-info text-center"> Project Management System </h1>
+<br/>
+
+<div class="container">
+<p id="notice_display"><%= notice %></p>
+	<fieldset>
+	 <legend class="text-info">Log In</legend>		
+		<%= form_tag accounts_path do %>
+		  <p>
+			<%= label_tag :login_name %>
+			<%= text_field_tag :login_name %>
+		  </p>
+		  <p>
+			<%= label_tag :password %>
+			<%= password_field_tag :password %>
+		  </p>
+		  <p><%= button_tag(type: "submit", class: "btn btn-large btn-primary") do %>
+				Log In 
+			<% end %></p>
+		<% end %>
+	</fieldset>	
+
+
+Forgot password? <%= link_to "click here to reset ",accounts_forgot_password_path %> <br/>
+New User? <%= link_to "click here to register" , new_user_path %> 
+
+</div>

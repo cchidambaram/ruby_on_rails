@@ -1,0 +1,28 @@
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Project Name</th>
+      <th>Project Description</th>
+      <th>Project Creator</th>
+      <th>Project Manager</th>
+      <th>Created at</th> 
+      <th> Edit</th>
+      <th> Delete</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.project_name %></td>
+        <td><%= project.project_description %></td>		
+		<td><%= project.project_creator.first_name + " " + project.project_creator.last_name %></td>
+		<td><%= project.project_manager.first_name + " " + project.project_manager.last_name %></td>
+        <td><%= project.project_created.to_date %></td> 
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @projects, renderer: BootstrapPagination::Rails %>

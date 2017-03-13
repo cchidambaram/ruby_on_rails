@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+John:
+  role: one
+  first_name: John
+  last_name: Morgan
+  email: john@gmail.com
+  phone_no: 6055555555
+  login_name: john
+  password: $2a$10$PQC2s8.v.opQlweQB5Du.OTxDK6Q5tsdRd7f5KCUUlz1hTWY.wZme
+  password: $2a$10$PQC2s8.v.opQlweQB5Du.OTxDK6Q5tsdRd7f5KCUUlz1hTWY.wZme
+  approved: true
+  active: true
+
+David:
+  role: two
+  first_name: John
+  last_name: Thompson
+  email: thompson@gmail.com
+  phone_no: 6055555555
+  login_name: Thompson
+  password: Thompson
+  password: Thompson
+  approved: true
+  active: true
+  
+manager2:
+  role: one
+  first_name: John
+  last_name: Thompson
+  email: thompson@gmail.com
+  phone_no: 6055555555
+  login_name: manager2
+  password: $2a$10$Z60/X9gHYCswLg6rLtpyouaiG50JqCD02D2HJp33J2pWf1Jn3U3N2
+  password: $2a$10$Z60/X9gHYCswLg6rLtpyouaiG50JqCD02D2HJp33J2pWf1Jn3U3N2
+  approved: true
+  active: true
